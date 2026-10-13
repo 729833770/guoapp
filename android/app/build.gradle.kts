@@ -57,6 +57,8 @@ android {
             applicationIdSuffix = ".debug"
         }
         release {
+            applicationIdSuffix = ".preview"
+            manifestPlaceholders["appLabel"] = if (allSources) "真果鉴（测试）" else "红果鉴（测试）"
             signingConfig = signingConfigs.getByName(if (releaseKey.exists()) "release" else "debug")
         }
     }
